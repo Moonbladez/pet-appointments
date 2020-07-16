@@ -7,6 +7,7 @@ import { Footer } from "../Navigation/Footer/Footer"
 
 
 import './App.css';
+import { without } from 'lodash';
 
 export class App extends Component {
   constructor(props) {
@@ -14,7 +15,20 @@ export class App extends Component {
     this.state = {
       myAppointments: []
     }
+
+    this.deleteAppointment = this.deleteAppointment.bind(this)
   }
+
+  deleteAppointment(appointment) {
+    let tempAppointments = this.state.myAppointments;
+    tempAppointments = without(tempAppointments, appointment)
+
+    this.setState({
+      myAppointments: tempAppointments
+    })
+
+  }
+
 
   componentDidMount() {
     fetch("./db.json")
@@ -32,7 +46,6 @@ export class App extends Component {
 
 
   render() {
-    console.log(this.state)
     return (
       <div className="App">
         <Navbar />
@@ -43,7 +56,7 @@ export class App extends Component {
                 <div className="container">
                   <AddAppointments />
                   <SearchAppointments />
-                  <ListAppointments appointments={this.state.myAppointments} />
+                  <ListAppointments appointments={this.state.myAppointments} deleteAppointment={this.deleteAppointment} />
                 </div>
               </div>
             </div>
