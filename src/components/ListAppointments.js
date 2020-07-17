@@ -9,7 +9,6 @@ import { v4 as uuidv4 } from 'uuid';
 
 export class ListAppointments extends Component {
     render() {
-        console.log(this.props)
         return (
             <div className="row">
                 <div className="appointment-list">
