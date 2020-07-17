@@ -17,9 +17,9 @@ export class ListAppointments extends Component {
                         <div className="s12 m6 l4" key={uuidv4()} >
                             <div className="card">
                                 <div className="card-content">
-                                    <h4 className="card-title">{appointment.petName}</h4>
+                                    <h4 className="card-title" >{appointment.petName}</h4>
                                     <span>Owner: {appointment.ownerName}</span>
-                                    <div><RiCalendar2Line />
+                                    <div>
                                         <Moment date={appointment.aptDate} parse={"YYYY-MM-dd hh:mm"} format="MMM-D h:mma" />
                                     </div>
                                     <p>{appointment.aptNotes}</p>

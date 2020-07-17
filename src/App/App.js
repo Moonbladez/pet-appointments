@@ -16,20 +16,20 @@ export class App extends Component {
       myAppointments: [],
       orderBy: "petName",
       orderDirection: "asc",
-      queryText: ""
+      queryText: "",
     }
 
     this.deleteAppointment = this.deleteAppointment.bind(this)
     this.addAppointment = this.addAppointment.bind(this)
     this.changeOrder = this.changeOrder.bind(this)
     this.searchAppointments = this.searchAppointments.bind(this)
+
   }
 
   addAppointment(appointment) {
     let tempAppointments = this.state.myAppointments
     tempAppointments.unshift(appointment)
-    console.log(appointment)
-    console.log(this.state.myAppointments)
+
 
     this.setState({
       myAppointments: tempAppointments
@@ -51,13 +51,12 @@ export class App extends Component {
     this.setState({ queryText: query })
   }
 
+
   changeOrder(order, direction) {
     this.setState({
       orderBy: order,
       orderDirection: direction
     })
-
-    console.log("order", this.state)
   }
 
 
@@ -107,7 +106,7 @@ export class App extends Component {
 
     return (
       <div className="App">
-        <Navbar />
+        <Navbar searchAppointments={this.searchAppointments} />
         <main className="grey lighten-5 grey darken-4-text" >
           <div className="container">
             <div className="row">

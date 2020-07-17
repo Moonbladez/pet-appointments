@@ -8,14 +8,7 @@ export class SearchAppointments extends Component {
             <div className="search-appointment">
                 <div className="col s12">
                     <div className="input-group">
-                        <input
-                            id="SearchApts"
-                            type="text"
-                            className="form-control"
-                            aria-label="Search Appointments"
-                            onChange={event => this.props.searchAppointments(event.target.value)}
-                        />
-                        <div className="input-group-append">
+                        <div >
                             <button
                                 type="button"
                                 className="btn dropdown-trigger indigo darken-1 waves-effect"
